@@ -1,0 +1,88 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+footer {
+    background-color: v.$black;
+    padding: 30px 0;
+    width: 100%;
+    flex-shrink: 0;
+    margin-top: 20px;
+
+    .footer-flex {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 25px;
+        text-align: center;
+
+        @include m.breakpoint(tablethorizontal) {
+            max-width: 1100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+
+        .logo {
+        display: block;
+
+            img {
+                display: block;
+                width: 200px;
+            }
+        }
+
+        .social-icons {
+            margin: 16px auto 0;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+
+            @include m.breakpoint(tablethorizontal) {
+                margin: 0;
+            }
+
+            a {
+                color: v.$grey;
+
+                &:hover {
+                    color: v.$white;
+                }
+
+                svg {
+                    width: 22px;
+                    height: 22px;
+                    display: block;
+                    fill: currentColor;
+                }
+            }
+        }
+
+        p {
+            margin: 16px auto 0;
+            font-weight: 700;
+            font-family: v.$secundary-font;
+            font-size: 15px;
+            line-height: 28px;
+            color: v.$grey;
+
+            @include m.breakpoint(tablethorizontal) {
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                background: linear-gradient(
+                90deg,
+                #800080 0%,
+                #9b1c9b 20%,
+                #ff0000 50%,
+                #ff4c00 70%,
+                #ff7f00 100%
+                );
+                background-clip: text;
+                color: transparent;
+            }
+        }
+    }
+}

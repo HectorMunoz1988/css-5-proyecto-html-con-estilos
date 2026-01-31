@@ -1,0 +1,17 @@
+@forward 'animations';
+@forward 'reset';
+@forward 'typography';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}

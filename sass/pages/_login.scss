@@ -1,0 +1,188 @@
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+
+.login-page {
+    min-height: 100vh;
+    background-color: v.$black;
+
+    @include m.breakpoint(tablethorizontal) {
+        margin-left: 50vw;
+        min-height: 100vh;
+    }
+
+    // Background imagen izquierda
+    &::before {
+        content: ""; // → | ✓ | ✔ | ★ | • | › | » | ✕  | ✦ | ⚠️ | 🔥 | ⭐ | 📌 | ❗ | 🔒 | 🔓 | 🔔 | 🛠️ | 📝 | 📎 | 📊 | Texto
+        display: block; // block | inline | inline-block | flex | grid | none | inline-flex | inline-grid | table | etc
+        width: 100%; // 200px | 10em | 5rem | 75%
+        height: 160px;
+        background-image: url('/img/login/login-background-image.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+
+        @include m.breakpoint(tablethorizontal) {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50vw;
+            height: 100vh;
+            z-index: 1;
+        }
+    }
+
+    // Bloque derecho
+    .login-page-container {
+        max-width: 510px;
+        margin: 0px auto;
+        position: relative;
+        padding: 0 32px;
+    
+
+        // Conquer Logo
+        .site-header {
+            margin: 160px auto 0px auto;
+            padding: 0px;
+
+            .menu {
+                display: flex;
+                justify-content: center;
+            }
+
+            .logo img {
+                padding: 30px 0px;
+                width: 320px;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        // Formulario
+        .login-container {
+            position: relative;
+            .login-form {
+
+                h1 {
+                    margin-top: 0px;
+                    text-align: left; // left | right | center | justify | start | end
+                    font-weight: 700; // 200, 300, normal(400), 500, 600, bold(700), 800, 900
+                    font-size: 18px;
+                    line-height: 32px;
+                }
+
+                .warning {
+                    margin-top: 15px;
+                    background-color: #A30E14;
+                    border-radius: 8px;
+                    padding: 12px;
+                    font-size: 13px;
+                    line-height: 21px;
+                    color: v.$white2;
+                }
+
+                // Email - Password
+                .input-wrapper {
+                    position: relative;
+                    margin-top: 24px;
+
+                    input {
+                        background-color: v.$grey3;
+                        width: 100%;
+                        padding: 12px 12px 12px 40px;
+                        border: 1px solid v.$grey4;
+                        border-radius: 8px;
+                        font-size: 16px;
+                        outline: none;
+                        color: v.$grey2;
+
+                        &::placeholder {
+                            color: v.$grey2;
+                        }
+                    }
+
+                    .icon {
+                        position: absolute;
+                        left: 12px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 24px;
+                        height: 24px;
+                        fill: currentColor;
+                        color: v.$grey2;
+                        pointer-events: none;
+                    }
+                }
+
+                // Recuérdame - ¿Olvidó la contraseña?
+                .login-options {
+                    margin-top: 20px;
+                    margin-bottom: 8px;
+                    display: flex;
+                    justify-content: space-between; // flex-start(por defecto) | flex-end | center | space-between | space-around | space-evenly
+                    align-items: center; // stretch(por defecto) | flex-start | flex-end | center | baseline
+                    
+                    .remember-me {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        cursor: pointer;
+                        font-family: v.$secundary-font;
+                        font-size: 14px;
+                        line-height: 19px;
+
+                        input[type="checkbox"] {
+                            appearance: none;
+                            width: 18px;
+                            height: 18px;
+                            border: 1px solid v.$grey4;
+                            background-color: v.$grey3;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            position: relative;
+                        }
+
+                        input[type="checkbox"]:checked {
+                            background-color: v.$blue4;
+                            border-color: v.$blue4;
+                        }
+
+                        input[type="checkbox"]:checked::after {
+                            content: "✓";
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -55%);
+                            font-size: 12px;
+                            color: v.$white;
+                            font-weight: bold;
+                        }
+                    }
+
+                    .forgot-password {
+                        font-family: v.$secundary-font;
+                        font-size: 14px;
+                        line-height: 19px;
+                        text-decoration: none;
+                        color: v.$grey;
+                        transition: color 0.2s ease;
+                    }
+
+                    .forgot-password:hover {
+                        color: v.$blue4;
+                        text-decoration: none;
+                    }
+                }
+
+                p {
+                    margin-top: 24px;
+                    text-align: left; // left | right | center | justify | start | end
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,112 @@
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+header {
+    background-color: v.$black;
+    padding: 10px 25px;
+    z-index: 12;
+    width: 100%;
+    flex-shrink: 0;
+
+    @include m.breakpoint(desktop) {
+        padding: 0;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 10px 25px;
+
+        @include m.breakpoint(desktop) {
+            max-width: 1100px;
+        }
+
+        .logo {
+            display: block;
+            img {
+                display: block;
+                width: 200px;
+            }
+        }
+
+        // Boton hamburguesa
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: block;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+
+            svg {
+                width: 100%;
+                height: 100%;
+                fill: v.$white;
+            }
+
+            @include m.breakpoint(desktop) {
+                display: none;
+            }
+        }
+
+        nav {
+            position: absolute;
+            top: 44px;
+            left: 0;
+            width: 100%;
+            background-color: v.$black;
+            display: none;
+            z-index: 10;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+
+            @include m.breakpoint(desktop) {
+                position: static;
+                display: block;
+                width: auto;
+                box-shadow: none;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                list-style: none;
+
+                @include m.breakpoint(desktop) {
+                    margin-left: auto;
+                    display: flex;
+                    flex-direction: row; // row(por defecto) | row-reverse | column | column-reverse
+                    align-items: center; // stretch(por defecto) | flex-start | flex-end | center | baseline
+                    gap: 0px;
+
+                }
+
+                li {
+                    a {
+                        color: v.$grey;
+                        text-decoration: none;
+                        font-size: 12px;
+                        line-height: 20px;
+                        display: block;
+                        padding: 20px;
+
+                        &:hover {
+                        background-color: v.$black;
+                        }
+                    }
+                }
+            }
+        }
+
+        .menu-toggle:checked ~ nav {
+            display: block;
+        }
+    }
+}

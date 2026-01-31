@@ -1,0 +1,32 @@
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.footer-small {
+    
+    p {
+        text-align: center; // left | right | center | justify | start | end
+        line-height: 100px;
+        margin: 16px 0px 0px 0px;
+        font-weight: 700; // 200, 300, normal(400), 500, 600, bold(700), 800, 900
+        font-family: v.$secundary-font;
+        font-size: 15px;
+        line-height: 28px;
+        color: v.$grey;
+
+        a {
+            text-decoration: none;
+            background: linear-gradient(
+                90deg,
+                #800080 0%,
+                #9b1c9b 20%,
+                #ff0000 50%,
+                #ff4c00 70%,
+                #ff7f00 100%    
+            );
+
+            background-clip: text;
+            color: transparent;
+        }
+    }
+}

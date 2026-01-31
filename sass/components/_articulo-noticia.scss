@@ -1,0 +1,74 @@
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.articulo-noticia {
+    margin: 40px auto 0;
+    max-width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    background-color: v.$black;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    @include m.breakpoint(tablethorizontal) {
+        max-width: 450px;
+    }
+
+    @include m.breakpoint(desktop) {
+        max-width: 700px;
+    }
+
+    .article-padding {
+        padding: 24px 32px;
+
+        iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 12px;
+            margin: 28px 0;
+            border: none;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+        }
+
+        ol {
+            margin: 20px 0 30px 20px;
+            padding-left: 10px;
+
+            li {
+                margin-bottom: 12px;
+                line-height: 1.6;
+                font-family: v.$secundary-font;
+                color: v.$grey2;
+
+                &::marker {
+                    font-weight: 700;
+                    color: v.$blue4;
+                }
+            }
+        }
+
+        figure {
+            margin-top: 24px;
+            text-align: center;
+
+            img {
+                max-width: 100%;
+                border-radius: 10px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.03);
+                    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+                }
+            }
+        }
+    }
+
+    > a {
+        margin: 20px auto 30px;
+        align-self: center;
+    }
+}

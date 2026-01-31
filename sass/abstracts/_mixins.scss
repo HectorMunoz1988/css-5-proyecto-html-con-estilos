@@ -1,0 +1,75 @@
+
+@use 'variables' as v;
+
+@mixin breakpoint($bp) {
+    @if $bp == tablet {
+        @media (min-width: v.$bp-tablet) {              // 768px
+            @content;
+        }
+    }
+
+    @else if $bp == tablethorizontal {
+        @media (min-width: v.$bp-tablet-horizontal) {   // 1024px
+            @content;
+        }
+    }
+
+    @else if $bp == desktop {
+        @media (min-width: v.$bp-desktop) {             // 1200px
+            @content;
+        }
+    }
+
+    @else if $bp == desktopxl {
+        @media (min-width: v.$bp-desktop-xl) {          // 1440px
+            @content;
+        }
+    }
+
+    @else {
+        @error "El breakpoint `#{$bp}` no existe.";
+    }
+}
+
+@mixin button(
+    $bg: v.$blue4,
+    $color: v.$white,
+    $padding: 12px,
+    $radius: 8px,
+    $border-bottom: none,   // subrayado -> 2px solid v.$green, (controlas la altura con el padding-bottom)
+    $font-weight: 400,
+    $font-size: 13px,
+    $line-height: 21px,
+    $letter-spacing: 0px,
+
+    $hover-bg: v.$blue4,
+    $hover-color: v.$white
+) {
+    display: inline-block;
+    background: $bg;
+    color: $color;
+    padding: $padding;
+    border-radius: $radius;
+    border: none; 
+    border-bottom: $border-bottom;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+    appearance: none;   // elimina los estilos del button por defecto del navegador
+    -webkit-appearance: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        background: $hover-bg;
+        color: $hover-color;
+    }
+}
+
+
+
+
+

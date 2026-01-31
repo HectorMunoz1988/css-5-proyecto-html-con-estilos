@@ -1,0 +1,30 @@
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+
+.profesores-contenedor {
+    margin: 0px auto;
+    max-width: 500px;
+
+    @include m.breakpoint(tablethorizontal) {
+        width: 500px;
+    }
+
+    .profesores-flex {
+        display: flex;
+        flex-direction: row; // row(por defecto) | row-reverse | column | column-reverse
+        align-items: center; // stretch(por defecto) | flex-start | flex-end | center | baseline
+        justify-content: space-between; // flex-start(por defecto) | flex-end | center | space-between | space-around | space-evenly
+
+        img {
+            max-width: 100px;
+            margin: 0px;
+            
+            @include m.breakpoint(tablethorizontal) {
+                max-width: 140px;
+            }
+        }
+    }
+}
+

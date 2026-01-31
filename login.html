@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <!-- Codificacion -->
+    <meta charset="UTF-8">
+    <!-- Medidas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titulo en Google y en pestaña -->
+    <title>Login | Conquer Academy</title>
+    <!-- Descripcion para Google -->
+    <meta name="description" content="Conquer Academy Login">
+    <!-- Palabras clave -->
+    <meta name="keywords" content="tarea, Tarea_16, Conquer Academy, Login, proyecto, HTML">
+    <meta name="author" content="Hector">
+    <!-- Icono que se vera en Google y en la pestaña -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="login-page">
+
+    <div class="login-page-container">
+
+        <!-- HEADER -->
+        <header class="site-header">
+            <div class="menu">
+                <a href="index.html" class="logo">
+                    <img src="img/header/grey-logo.png" alt="logo" width="320">
+                </a>
+            </div>
+        </header>
+
+        <main class="login-content">
+            <section class="login-container">
+
+                <!-- FORMULARIO -->
+                <div class="login-form">
+                    <h1>Iniciar sesión</h1>
+
+                    <p class="warning">Inicia sesión para acceder al sitio web.</p>
+
+                    <form class="login-form" method="post">
+
+                        <!-- Email -->
+                        <div class="input-wrapper">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path d="M480-479q-58.5 0-98.75-40.25T341-618q0-58.5 40.25-98.75T480-757q58.5 0 98.75 40.25T619-618q0 58.5-40.25 98.75T480-479ZM201-205v-90q0-22 11.75-41.25t33.27-32.76Q300-400 359.54-416.75q59.54-16.75 120.25-16.75t120.46 16.75Q660-400 713.98-369.01q21.52 12.51 33.27 32.26Q759-317 759-295v90H201Zm67-67h424v-23q0-5.37-3.03-9.76-3.02-4.39-8.47-6.74-45.5-27.5-96.17-41.25Q533.65-366.5 480-366.5q-54 0-104.5 13.75t-96 41.25q-5.5 4-8.5 7.88t-3 8.62v23Zm212.21-274Q510-546 531-567.21t21-51Q552-648 530.79-669t-51-21Q450-690 429-668.79t-21 51Q408-588 429.21-567t51 21Zm-.21-72Zm0 346Z"/>
+                            </svg>
+                            <input type="email" id="email" name="email" placeholder="Dirección de correo electrónico" required>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="input-wrapper">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path d="M290.89-388q-38.39 0-65.14-26.86Q199-441.71 199-480.11q0-38.39 26.86-65.14Q252.71-572 291.11-572q38.39 0 65.14 26.86Q383-518.29 383-479.89q0 38.39-26.86 65.14Q329.29-388 290.89-388Zm.11 141q-97.08 0-165.04-67.94T58-479.94Q58-577 125.96-645T291-713q64 0 117.5 32t85.5 87h345l114 114-173.5 161.5-83.75-60-71.75 60-95-71.5h-23q-23 68-83.26 105.5Q362.48-247 291-247Zm-.22-67q62.22 0 109.72-40t54-103H551l71 52.5 71-59 82 57.5 81.5-75-45-46h-362q-18.5-53.5-61.75-86.25T291-646q-69.5 0-117.75 48.25T125-480q0 69.5 48.35 117.75Q221.69-314 290.78-314Z"/>
+                            </svg>
+                            <input type="password" id="pass1" name="pass1" placeholder="Contraseña" required>
+                        </div>
+
+                        <!-- Opciones -->
+                        <div class="login-options">
+                            <label class="remember-me">
+                                <input type="checkbox" name="remember">
+                                Recuérdame
+                            </label>
+
+                            <a href="#" class="forgot-password">¿Olvidó la contraseña?</a>
+                        </div>
+
+                        <button class="btn-primary" type="submit">Acceder</button>
+                    </form>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer-small">
+            <p>Copyright © 2026 - <a href="legal.html">By Conquer Academy</a></p>
+        </footer>
+    </div>
+    
+    <script type="module" src="/src/main.js"></script>
+</body>
+

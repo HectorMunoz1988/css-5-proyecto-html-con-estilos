@@ -1,0 +1,142 @@
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+
+.registrer-page {
+    min-height: 100vh;
+    background-color: v.$black;
+
+        @include m.breakpoint(tablethorizontal) {
+        margin-left: 50vw;
+        min-height: 100vh;
+    }
+
+    // Background imagen izquierda
+    @include m.breakpoint(tablethorizontal) {
+        &::before {
+            content: ""; // → | ✓ | ✔ | ★ | • | › | » | ✕  | ✦ | ⚠️ | 🔥 | ⭐ | 📌 | ❗ | 🔒 | 🔓 | 🔔 | 🛠️ | 📝 | 📎 | 📊 | Texto
+            display: block; // block | inline | inline-block | flex | grid | none | inline-flex | inline-grid | table | etc
+            background-image: url('/img/login/login-background-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50vw;
+            height: 100vh;
+            z-index: 1;
+        }
+    }
+
+    // Bloque derecho
+    .registrer-page-container {
+        max-width: 510px;
+        margin: 0px auto;
+        position: relative;
+        padding: 0 32px;
+    
+
+        // Conquer Logo
+        .site-header {
+            margin: 0px auto 0px auto;
+            padding: 0px;
+
+            .menu {
+                display: flex;
+                justify-content: center;
+            }
+
+            .logo img {
+                padding: 30px 0px;
+                width: 320px;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        // Formulario
+        .registrer-container {
+            position: relative;
+            .registrer-form {
+
+                h1 {
+                    margin-top: 0px;
+                    text-align: left; // left | right | center | justify | start | end
+                    font-weight: 700; // 200, 300, normal(400), 500, 600, bold(700), 800, 900
+                    font-size: 18px;
+                    line-height: 32px;
+                }
+
+                .input-wrapper {
+                    position: relative;
+                    margin-top: 0px;
+
+                    input {
+                        background-color: v.$grey3;
+                        width: 100%;
+                        padding: 6px 6px 6px 20px;
+                        border: 1px solid v.$grey4;
+                        border-radius: 8px;
+                        font-size: 16px;
+                        outline: none;
+                        color: v.$grey2;
+
+                        &::placeholder {
+                            color: v.$grey2;
+                        }
+                    }
+
+                    textarea {
+                        background-color: v.$grey3;
+                        width: 100%;
+                        padding: 10px 12px;
+                        border: 1px solid v.$grey4;
+                        border-radius: 8px;
+                        font-size: 16px;
+                        outline: none;
+                        color: v.$grey2;
+                        resize: vertical;
+                        min-height: 120px;
+
+                        &::placeholder {
+                            color: v.$grey2;
+                        }
+                    }
+                }
+
+                .file-wrapper {
+
+                    label {
+                        display: block;
+                    }
+
+                    .file-input {
+                        display: none;
+                    }
+
+                    .file-button {
+                        display: block;
+                        background-color: v.$blue4;
+                        color: v.$white2;
+                        padding: 3px;
+                        border-radius: 8px;
+                        font-size: 13px;
+                        cursor: pointer;
+                        text-align: center;
+                    }
+
+                    .file-button:hover {
+                        opacity: 0.9;
+                    }
+                }
+
+                p {
+                    margin-top: 10px;
+                    text-align: left; // left | right | center | justify | start | end
+                }
+            }
+        }
+    }
+}

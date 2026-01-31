@@ -1,0 +1,15 @@
+
+@use '../abstracts/variables' as v;
+
+body {
+    overflow-x: hidden;
+    background-color: v.$black;
+}
+
+img {
+    max-width: 100%; // para que mantenga bien la proporcion de ancho-alto
+    height: auto;
+    
+    display: block; // para que quede centrada
+    margin: 0 auto;
+}

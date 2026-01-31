@@ -1,0 +1,30 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.btn-primary {
+  @include m.button();
+  width: 100%;
+  margin-top: 15px;
+}
+
+.btn-secundary {
+  @include m.button();
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 15px auto 0px auto;
+  color: v.$white;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 0px;
+  background-color: v.$grey4;
+  
+
+  &:hover {
+    background-color: v.$grey4;
+    color: v.$white;
+  }
+
+}
+
+
