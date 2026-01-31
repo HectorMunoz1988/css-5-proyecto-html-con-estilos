@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <!-- Codificacion -->
+    <meta charset="UTF-8">
+    <!-- Medidas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titulo en Google y en pestaña -->
+    <title>Registro | Conquer Academy</title>
+    <!-- Descripcion para Google -->
+    <meta name="description" content="Conquer Academy registrer">
+    <!-- Palabras clave -->
+    <meta name="keywords" content="tarea, Tarea_16, Conquer Academy, registrer, proyecto, HTML">
+    <meta name="author" content="Hector">
+    <!-- Icono que se vera en Google y en la pestaña -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script type="module" crossorigin src="/css-5-proyecto-html-con-estilos/assets/main-CXs24JII.js"></script>
+  <link rel="stylesheet" crossorigin href="/css-5-proyecto-html-con-estilos/assets/main-Dm7CJV2e.css">
+</head>
+
+<body class="registrer-page">
+
+    <div class="registrer-page-container">
+
+        <!-- HEADER -->
+        <header class="site-header">
+            <div class="menu">
+                <a href="index.html" class="logo">
+                    <img src="img/header/grey-logo.png" alt="logo" width="320">
+                </a>
+            </div>
+        </header>
+
+        <main class="registrer-content">
+            <section class="registrer-container">
+
+                <!-- FORMULARIO -->
+                <div class="registrer-form">
+                    
+                    <h1>Únete a Conquer Academy</h1>
+                    <form method="post" action="" enctype="multipart/form-data">
+
+                        <div class="input-wrapper">
+                            <p><label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" maxlength="20" required></p>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <p><label for="apellidos">Apellidos:</label>
+                            <input type="text" id="apellidos" name="apellidos" maxlength="20" required></p>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <p><label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required></p>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <p><label for="email">Correo electronico:</label>
+                            <input type="email" id="email" name="email" minlength="11" required></p>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <p><label for="direccion">Direccion:</label>
+                            <input type="text" id="direccion" name="direccion" required></p>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <p><label for="web">Pagina web:</label>
+                            <input type="url" id="web" name="web" required></p>
+                        </div>
+
+                        <div class="file-wrapper">
+                            <p><label for="foto">Foto:</label>
+                            <input type="file" id="foto" name="foto" class="file-input" required>
+                            <label for="foto" class="file-button">Subir foto</label></p>
+                        </div>
+
+                        <div class="input-wrapper textarea-wrapper">
+                            <p>
+                                <label for="bio">Biografía:</label>
+                                <textarea id="bio" name="bio" rows="5" required></textarea>
+                            </p>
+                        </div>
+
+
+                        <button class="btn-primary" type="submit">Registrarse</button> 
+                    </form>     
+
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer-small">
+            <p>Copyright © 2026 - <a href="legal.html">By Conquer Academy</a></p>
+        </footer>
+    </div>
+    
+</body>
+
